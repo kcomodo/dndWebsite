@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "backend", "dndWebsite\backend.njsproj", "{591004F7-8640-46BD-B0A2-46242E78BEEF}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "backend", "backend\backend.njsproj", "{591004F7-8640-46BD-B0A2-46242E78BEEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
