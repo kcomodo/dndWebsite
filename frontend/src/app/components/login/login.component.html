@@ -1,0 +1,48 @@
+<!--Have fun with this Quang :)-->
+<link rel="stylesheet" href="login.component.css">
+
+<!-- Parent Container for the Login Box -->
+<div class="login-container">
+    <div id="box-login-outer"> 
+        
+        <!--Container for Welcome Text-->
+        <div class="welcome-container">
+            <header id = "login-text">Welcome Back Adventuer</header>
+        </div>
+
+        <!--Username / Password and sign in Form fill in form action later -->
+        <div class="sign-in-form-container">
+            <form action="" method="post">
+                
+                <!-- Username Input -->
+                <label for="Username" class="input-label">
+                    <input  type="text" id="Username" class="input-field" placeholder="Username or Email" required>
+                </label>
+                
+                <!-- Password Input -->
+                <label for="Password" class="input-label">
+                    <input type="password" id="Password" class="input-field" placeholder="Password" required>
+                </label>
+            </form>
+        </div>
+        
+        <!--Forgot Password & Remeber Me Container-->
+        <div class="extras-container">
+            
+            <label for="RemeberMe" class="remember-checkbox-label">
+                <input type="checkbox" id="remember-me" class="remember-checkbox-label"> Remember Me
+            </label> <!--Change href-->
+            <a id="forgot-password" class="forgot-password-link" href="http://localhost:4200/login">Forgot Password?</a>
+        </div>
+        
+        <!-- Note: impliment Submit Button -->
+        <input type="submit" value="Sign in" class="submit-button">
+    
+    </div>
+</div>
+
+    
+
+
+
+
