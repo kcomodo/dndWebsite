@@ -1,0 +1,36 @@
+
+<div class="user-input-container-reuseable"> <!-- Use one container because everything will be stacked on top of each other thanks to flex box my beloved-->
+    <header class="header-generic">Create Your Guild Card</header>
+    
+    <form action="" method="post">
+        <label for="username">
+            <input type="text" class="input-labels-reuseable" placeholder="Username" required>
+        </label>
+        
+        <label for="email">
+            <input type="email" class="input-labels-reuseable" placeholder="Email" required>
+        </label>
+        
+        <label for="password">
+            <input type="password" class="input-labels-reuseable" placeholder="Password" minlength="8" required>
+        </label>
+        
+        <label for="confirm-password">
+            <input type="password" class="input-labels-reuseable" placeholder="Confirm Password" required>
+        </label>
+        
+        <label for="tos-agreement">
+            <div class="tos-button-work">
+                By checking this box you agree to our <a href="localhost:4200/login"><br>Terms of Service & Privacy Policy</a>
+                <input type="checkbox" id="tos-confirm" required>
+            </div>
+        </label>
+        
+        <label for="signup-button">
+            <input type="submit" class="input-labels-reuseable" value="Sign Up!" required>
+        </label>
+        <label for="signup-google">
+            <input type="submit" class="input-labels-reuseable" value="Sign Up with Google" required>
+        </label>
+    </form>
+</div>
