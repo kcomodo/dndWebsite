@@ -1,0 +1,42 @@
+/* Align all the junk assoicated with tos button as well color it
+for readability  */
+.tos-button-work {
+    padding: 10% 0 5% 0;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px black;
+}
+
+a{
+    text-decoration-thickness: 3px;
+    color: white;
+}
+
+/* change the color of the tos hyperlink so you know its clickable*/
+a:hover {
+    color: rgb(218, 131, 199);
+}
+
+/* Align all the junk assoicated with the two signup buttons */
+label[for="signup-button"] {
+    position: relative;
+    left: 20%;
+}
+label[for="signup-google"] * {
+    position: relative;
+    left: 8%;
+    margin-bottom: 10%;
+}
+
+/*Make the "sign-in" buttons look like it was pressed section*/
+input[type=submit]:hover { 
+    background-color: #554760;
+    color: white;
+}
+
+input[type=submit]:focus { 
+    background-color: #554760;
+    color: white;
+    box-shadow: 0px 0px;
+    box-shadow: inset 0px 0px 5px #add0ff;
+}   
