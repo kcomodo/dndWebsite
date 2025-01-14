@@ -12,7 +12,6 @@ a{
     color: white;
 }
 
-/* change the color of the tos hyperlink so you know its clickable*/
 a:hover {
     color: rgb(218, 131, 199);
 }
