@@ -18,76 +18,35 @@ border-width: 2px;
 
 
 /*Section for welcome text and box styling*/
-#box-login-outer{
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 20vw;
-    background-color: #c374ff28;
-    backdrop-filter: blur(20px);
-    border-color: #F0C2F6;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 20px;
-}
 
-#login-text{
+.welcome-container{
     position: relative;
     margin: 15% 0 10% 0;
     text-align: center;
     color: #DBAEFF;
     font-size: 1.5em;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.226);;
-    
-}
-
-/*Section for Username, PasswordForm fill in */
-.sign-in-form-container input{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 50%;
-    padding: 5%;
-    margin: 15% 0 0 20%;
-    border-style: none;
-    border-radius: 20px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.226);
-    font-family: Inter;
-    font-size: 1em;
-}
-
-/*Section for "extras container" (forgot password and remember checkbox) Including Submit */
-input[type=submit] { /*Sign in button*/
-    position: relative;
-    left: 5%;
-    width: 50%;
-    padding: 5%;
-    margin: 5% 0 10% 20%;
-    border-style: none;
-    border-radius: 20px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.226);
-    font-family: Inter;
-    font-size: 1.1em;
-    color: #554760;
 }
 
 .extras-container{
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin: 5% 0 0 -1%;
+    margin: 5% 0 0 5%;
     padding: 4%
-}
-
-#forgot-password {
-    color: rgb(255, 255, 255);
 }
 
 .remember-checkbox-label {
     color: #554760; 
 }
 
-/*Make the "sign-in" button look like it was pressed section*/
+/*Make the "sign-in" button look like it was pressed section and align it*/
+input[type=submit] { 
+   position: relative;
+   left: 20%;
+   margin-bottom: 10%;
+   
+}
 input[type=submit]:hover { 
     background-color: #554760;
     color: white;
@@ -99,7 +58,17 @@ input[type=submit]:focus {
     box-shadow: 0px 0px;
     box-shadow: inset 0px 0px 5px #add0ff;
 }   
+/* Align all the junk assoicated with forgot password hyperlink as well color it
+for readability  */
+a{
+    text-decoration-thickness: 3px;
+    color: white;
+}
 
+a:hover {
+    color: rgb(218, 131, 199);
+}
+/* Screen compatability section */
 @media screen and (min-width: 320px) and (max-width: 425px) {
     #box-login-outer{
         top: 20%;
