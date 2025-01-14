@@ -18,18 +18,6 @@ border-width: 2px;
 
 
 /*Section for welcome text and box styling*/
-#box-login-outer{
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 20vw;
-    background-color: #c374ff28;
-    backdrop-filter: blur(20px);
-    border-color: #F0C2F6;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 20px;
-}
 
 #login-text{
     position: relative;
@@ -38,37 +26,6 @@ border-width: 2px;
     color: #DBAEFF;
     font-size: 1.5em;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.226);;
-    
-}
-
-/*Section for Username, PasswordForm fill in */
-.sign-in-form-container input{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 50%;
-    padding: 5%;
-    margin: 15% 0 0 20%;
-    border-style: none;
-    border-radius: 20px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.226);
-    font-family: Inter;
-    font-size: 1em;
-}
-
-/*Section for "extras container" (forgot password and remember checkbox) Including Submit */
-input[type=submit] { /*Sign in button*/
-    position: relative;
-    left: 5%;
-    width: 50%;
-    padding: 5%;
-    margin: 5% 0 10% 20%;
-    border-style: none;
-    border-radius: 20px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.226);
-    font-family: Inter;
-    font-size: 1.1em;
-    color: #554760;
 }
 
 .extras-container{
