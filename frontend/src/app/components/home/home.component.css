@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: auto;
+}
+.headerContent {
+    font-family: 'Metal Mania';
+    color: white;
+}
+
+/*Make the "sign in" & "Login" button look like it was pressed section and align it*/
+input[type=submit]:hover { 
+    background-color: #554760;
+    color: white;
+}
+
+input[type=submit]:focus { 
+    background-color: #554760;
+    color: white;
+    box-shadow: 0px 0px;
+    box-shadow: inset 0px 0px 5px #add0ff;
+}   
