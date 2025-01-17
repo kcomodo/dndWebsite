@@ -30,7 +30,66 @@ router.get('/users', (req, res) => {
         res.status(200).json(result);
     });
 });
+/*
+router.get('/userinfo/:email', async (req, res) => {
+    const email = req.params.email;
 
+    try {
+        // Query the database
+        const [rows] = await pool.execute(
+            'SELECT user_id, username, userEmail FROM userInfo WHERE userEmail = ?',
+            [email]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Return user info
+        res.status(200).json(rows[0]);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'An error occurred while retrieving user information' });
+    }
+});
+*/
+// CRUD - Get User by Email (GET request)
+//http://localhost:1337/api/users/testing%40gmail.com
+router.get('/users/:userEmail', (req, res) => {
+    const userEmail = req.params.userEmail;
+    const sql = "SELECT * FROM userInfo WHERE userEmail = ?";
+
+    con.query(sql, [userEmail], function (err, result) {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+
+        if (result.length === 0) {
+            res.status(404).json({ message: "User not found" });
+            return;
+        }
+
+        res.status(200).json(result[0]);
+    });
+});
+
+/*
+// Frontend (React) example using fetch
+const getUserInfo = async (email) => {
+    try {
+        const response = await fetch(`/api/getUserInfo?userEmail=${encodeURIComponent(email)}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch user info');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching user info:', error);
+        throw error;
+    }
+};
+*/
 // Export the router to use in server.js
 module.exports = router;
 
