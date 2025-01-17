@@ -1,0 +1,34 @@
+/* The following style is a reusable border */
+.user-input-container-reuseable {
+  position: relative;
+  margin: 0 auto;
+  top: 20vh;
+  width: 20vw;
+  align-items: center;
+  background-color: #c374ff28;
+  backdrop-filter: blur(20px);
+  border-color: #F0C2F6;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 20px;
+}
+/* The following style changes <input type> to a single standard */
+.input-labels-reuseable {
+  position: relative;
+  margin: 5% 0% 0% 15%;
+  border-style: none;
+  border-radius: 20px;
+  padding: 5%;
+  font-family: Inter;
+  font-size: 1.1em;
+  color: #554760;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.226);
+}
+
+.header-generic {
+  position: relative;
+  color: #DBAEFF;
+  padding-top: 10%;
+  font-size: 1.5rem;
+  text-align: center;
+}
