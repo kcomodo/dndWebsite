@@ -17,6 +17,7 @@ border-width: 2px;
 
 
 /*Section for welcome text and box styling*/
+
 body {
   font-family: Inter;
   background-image: url(/homepage_background.jpg);
@@ -26,6 +27,17 @@ body {
   width: 100%;
   height: 100%;
   
+=======
+body{
+    font-family: Inter;
+    background-image: url(/homepage_background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    
+
 }
 
 .welcome-container {
