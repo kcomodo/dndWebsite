@@ -101,7 +101,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-QLUYPSOL.js";
+} from "./chunk-PEAVEDUD.js";
 import {
   __async,
   __objRest,
@@ -110,7 +110,7 @@ import {
   __toESM
 } from "./chunk-YHCV7DAQ.js";
 
-// ../../../../node_modules/@angular/common/fesm2022/common.mjs
+// node_modules/@angular/common/fesm2022/common.mjs
 var import_rxjs = __toESM(require_cjs(), 1);
 var _DOM = null;
 function getDOM() {
@@ -4997,7 +4997,7 @@ function booleanOrUrlAttribute(value) {
   return booleanAttribute(value);
 }
 
-// ../../../../node_modules/@angular/common/fesm2022/http.mjs
+// node_modules/@angular/common/fesm2022/http.mjs
 var import_rxjs2 = __toESM(require_cjs(), 1);
 var import_operators = __toESM(require_operators(), 1);
 var HttpHandler = class {
@@ -7321,7 +7321,7 @@ function verifyMappedOrigin(url) {
   }
 }
 
-// ../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
+// node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var GenericBrowserDomAdapter = class extends DomAdapter {
   supportsDOMEvents = true;
 };
@@ -9235,4 +9235,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-J3WNIE2T.js.map
+//# sourceMappingURL=chunk-ZI5JGHU3.js.map
