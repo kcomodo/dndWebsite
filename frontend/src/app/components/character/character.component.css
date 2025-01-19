@@ -1,17 +1,23 @@
-.container{
-    background-color:white;
+.container {
+  background-color: white;
+  background-color: black;
 }
-#preview{
-    width:auto;
-    height:auto;
+
+#preview {
+  width: auto;
+  height: auto;
 }
+
 .characterSheet {
+
   display: flex;
 }
-.characterStats{
-    background-color:black;
-    color:white;
+
+.characterStats {
+  background-color: black;
+  color: white;
 }
+
 .characterStats2 {
   background-color: brown;
   color: white;
