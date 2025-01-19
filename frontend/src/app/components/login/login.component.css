@@ -26,18 +26,6 @@ body {
   background-size: cover;
   width: 100%;
   height: 100%;
-  
-=======
-body{
-    font-family: Inter;
-    background-image: url(/homepage_background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    
-
 }
 
 .welcome-container {
