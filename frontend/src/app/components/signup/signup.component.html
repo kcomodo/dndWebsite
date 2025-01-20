@@ -2,27 +2,27 @@
 <div class="user-input-container-reuseable"> <!-- Use one container because everything will be stacked on top of each other thanks to flex box my beloved-->
     <header class="header-generic">Create Your Guild Card</header>
     
-    <form action="" method="post">
+    <form action="" method="post" (ngSubmit)="onSubmit()">
         <label for="username">
-            <input type="text" class="input-labels-reuseable" placeholder="Username" required>
+            <input type="username" class="input-labels-reuseable" placeholder="Username" [(ngModel)]="username" name="username" required />
         </label>
         
         <label for="email">
-            <input type="email" class="input-labels-reuseable" placeholder="Email" required>
+            <input type="email" class="input-labels-reuseable" placeholder="Email" [(ngModel)]="email" name="email"required>
         </label>
         
         <label for="password">
-            <input type="password" class="input-labels-reuseable" placeholder="Password" minlength="8" required>
+            <input type="password" class="input-labels-reuseable" placeholder="Password" [(ngModel)]="password" name="password" minlength="8" required>
         </label>
         
         <label for="confirm-password">
-            <input type="password" class="input-labels-reuseable" placeholder="Confirm Password" required>
+            <input type="password" class="input-labels-reuseable" placeholder="Confirm Password" placeholder="Password" [(ngModel)]="confirmPass" name="confirmPass" required>
         </label>
         
         <label for="tos-agreement">
             <div class="tos-button-work">
-                By checking this box you agree to our <a href="localhost:4200/login"><br>Terms of Service & Privacy Policy</a>
-                <input type="checkbox" id="tos-confirm" required>
+                By checking this box you agree to our <a href="login"><br>Terms of Service & Privacy Policy</a>
+                <input type="checkbox" id="tos-confirm" [(ngModel)]="userTos" name="userTos" required>
             </div>
         </label>
         
