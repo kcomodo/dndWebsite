@@ -1,6 +1,7 @@
 .container {
-  background-color: grey;
+ /* background-color: grey;*/
   margin: 2vh;
+  background-color:#FAF5EF;
 }
 
 .characterSheet {
@@ -10,33 +11,40 @@
 }
 
 .characterStats {
-  background-color: brown;
-  color: white;
+  /* background-color: brown;*/
+  background-color: #FFD5AA;
+  color:brown;
   width: 20vh;
   height: 15vh;
   margin: 10px;
   padding: 32px;
+  font-family: Inter;
 }
 
 #nameTitle {
   font-size: 5vh;
+  font-family: Inter;
 }
 
 .infoBox {
-  background-color: yellow;
+  /*background-color: yellow;*/
   margin: 10px 30px 20px 50px;
 }
 
 .info {
   display: flex;
   flex-wrap: wrap;
+  text-align:center;
 }
 
 #preview {
-  width: auto;
+ 
+  width: 30vh;
   height: 35vh;
-  background-color: black;
+  background-color: #FFD5AA;
   margin: 5vh;
+  display: flex;
+  overflow: hidden;
 }
 
 #fileInput {
@@ -47,4 +55,7 @@
 }
 
 .imageBox {
+}
+.Tabs{
+    display:flex;
 }
