@@ -2,6 +2,7 @@
 // Note: I didn't realize it generated with Service appended at the end so you are infact stuck with UserClientServiceService
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
