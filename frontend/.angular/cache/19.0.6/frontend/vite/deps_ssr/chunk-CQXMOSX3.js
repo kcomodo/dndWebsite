@@ -7,6 +7,8 @@ import {
   platformServer,
   renderApplication,
   renderModule,
+  Router,
+  loadChildren,
   APP_BASE_HREF,
   PlatformLocation
 } from "./chunk-SLIZ5KYQ.js";
