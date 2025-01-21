@@ -10,11 +10,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrls: ['./login.component.css'], // Correctly pluralized
 })
 export class LoginComponent {
-  private baseUrl = "https://localhost/1337"; // Base URL for the backend
-
+  private baseUrl = 'http://localhost:1337'; // Base URL for the backend
+  private loginUrl = 'http://localhost:1337/login';
   constructor(private http: HttpClient) { // Injecting HttpClient
     console.log("Testing LoginComponent");
-    let clientEmail = "testing@gmail.com";
+    let clientEmail = "testing71@gmail.com";
     let clientPW = "testing1234";
 
     // Call the validateLogin method
@@ -29,7 +29,8 @@ export class LoginComponent {
   }
 
   validateLogin(clientEmail: string, clientPW: string): Observable<any> {
-    // Send POST request to the backend
-    return this.http.post(`${this.baseUrl}/login`, { clientEmail, clientPW });
+    const body = { clientEmail, clientPW };
+    return this.http.post(`${this.baseUrl}/login`, body);
   }
+
 }

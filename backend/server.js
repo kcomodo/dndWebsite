@@ -46,10 +46,10 @@ app.use(cors());
 //using this to handle preflight requests so that they also intake the corsOptions
 app.options('*', cors(corsOptions));
 
-app.get("/login", cors(corsOptions), async function(req, res){
+app.post("/login", cors(corsOptions), async function(req, res){
     console.log(req.body);
     const clientEmail = req.body.clientEmail;
-    const clientPW = req.query.clientPW;
+    const clientPW = req.body.clientPW;
     console.log(clientEmail+", "+clientPW);
 })
 
