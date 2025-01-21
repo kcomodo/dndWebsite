@@ -1,17 +1,50 @@
+<div class="backgroundImage">
+  <p>background image up here + links</p>
+</div>
 <div class="container">
-  <p>Name of your character</p>
+  <p id="nameTitle">Name of your character</p>
   <div class="characterSheet">
     <div class="imageBox">
       <div id="preview">
+        <input type="file" name="fileInput" id="fileInput" accept="image/*" capture="camera" (change)="onFileSelected($event)">
       </div>
-      <label for="fileInput">Choose image files to see preview</label>
-      <input type="file" name="fileInput" id="fileInput" accept="image/*" capture="camera" (change)="onFileSelected($event)">
     </div>
-    <div class="characterStats">
-      <p>test</p>
-    </div>
-    <div class="characterStats2">
-      <p>test</p>
+    <div class="infoBox">
+      <div class="info">
+        <div class="characterStats">
+          <p>Class</p>
+        </div>
+        <div class="characterStats">
+          <p>Background</p>
+        </div>
+        <div class="characterStats">
+          <p>Race</p>
+        </div>
+        <div class="characterStats">
+          <p>Alignment</p>
+        </div>
+        <div class="characterStats">
+          <p>HP</p>
+        </div>
+        <div class="characterStats">
+          <p>Armor</p>
+        </div>
+        <div class="characterStats">
+          <p>Hit Dice</p>
+        </div>
+        <div class="characterStats">
+          <p>Inspiration</p>
+        </div>
+        <div class="characterStats">
+          <p>Proficiency</p>
+        </div>
+        <div class="characterStats">
+          <p>Initiative</p>
+        </div>
+        <div class="characterStats">
+          <p>Speed</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
