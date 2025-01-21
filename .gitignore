@@ -15,7 +15,7 @@
 
 # Mono auto generated files
 mono_crash.*
-
+*.env
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 frontend/.angular/cache/19.0.6/frontend/.tsbuildinfo
+
+*.env

@@ -1,11 +1,7 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Title
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-NWR6GAEH.js
-} from "./chunk-2CUBFFMY.js";
-========
-} from "./chunk-6FWMCUKM.js";
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-2VVOZXF7.js
+} from "./chunk-5EZB52YK.js";
 import {
   DOCUMENT,
   HashLocationStrategy,
@@ -5942,8 +5938,4 @@ export {
    * License: MIT
    *)
 */
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-NWR6GAEH.js
-//# sourceMappingURL=chunk-NWR6GAEH.js.map
-========
-//# sourceMappingURL=chunk-2VVOZXF7.js.map
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-2VVOZXF7.js
+//# sourceMappingURL=chunk-7TTVXZSZ.js.map
