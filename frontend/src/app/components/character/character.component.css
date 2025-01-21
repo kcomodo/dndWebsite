@@ -1,6 +1,7 @@
 .container {
-  background-color: grey;
-  margin:2vh;
+ /* background-color: grey;*/
+  margin: 2vh;
+  background-color:#FAF5EF;
 }
 
 .characterSheet {
@@ -10,39 +11,74 @@
 }
 
 .characterStats {
-  background-color: brown;
-  color: white;
-  width:20vh;
-  height:15vh;
-  margin:10px;
-  padding:32px;
+  /* background-color: brown;*/
+  background-color: #FFD5AA;
+  color:brown;
+  width: 20vh;
+  height: 15vh;
+  margin: 10px;
+  padding: 32px;
+  font-family: Inter;
 }
-#nameTitle{
-    font-size:5vh;
+
+#nameTitle {
+  font-size: 5vh;
+  font-family: Inter;
 }
+
 .infoBox {
-  background-color: yellow;
+  /*background-color: yellow;*/
   margin: 10px 30px 20px 50px;
 }
-.info{
-    display:flex;
-    flex-wrap:wrap;
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  text-align:center;
 }
 
 #preview {
-  width: auto;
+ 
+  width: 30vh;
   height: 35vh;
-  background-color: black;
+  background-color: #FFD5AA;
   margin: 5vh;
-
+  display: flex;
+  overflow: hidden;
 }
 
 #fileInput {
   width: auto;
   height: 35vh;
   background-color: red;
-
+  opacity:0;
 }
-.imageBox{
 
+.imageBox {
 }
+
+/* Section to Style Tabs */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab, button{
+  background-color: inherit;
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab, button:hover {
+  background-color: #ddd;
+}
+
+.tab, button.active {
+  background-color: #ccc;
+}
+
