@@ -1,23 +1,15 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
-  Router,
-  loadChildren
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-UJ24MAIH.js
-} from "./chunk-NWR6GAEH.js";
-========
-} from "./chunk-2VVOZXF7.js";
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-Q5AFJCWD.js
-import {
   INITIAL_CONFIG,
   SERVER_CONTEXT,
   platformServer,
   renderApplication,
   renderModule
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-UJ24MAIH.js
-} from "./chunk-K35H33P2.js";
-========
-} from "./chunk-IXHACM22.js";
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-Q5AFJCWD.js
+} from "./chunk-SLIZ5KYQ.js";
+import {
+  Router,
+  loadChildren
+} from "./chunk-7TTVXZSZ.js";
 import {
   APP_BASE_HREF,
   PlatformLocation
@@ -11297,8 +11289,4 @@ export {
   AngularAppEngine,
   createRequestHandler
 };
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-UJ24MAIH.js
-//# sourceMappingURL=chunk-UJ24MAIH.js.map
-========
-//# sourceMappingURL=chunk-Q5AFJCWD.js.map
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-Q5AFJCWD.js
+//# sourceMappingURL=chunk-6USQ22AV.js.map
