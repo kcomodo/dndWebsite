@@ -1,49 +1,46 @@
 {
-  "hash": "ea48db5c",
-  "configHash": "8f2feef7",
+  "hash": "0297332a",
+  "configHash": "419301ff",
   "lockfileHash": "c5a04b84",
-  "browserHash": "96e5404b",
+  "browserHash": "0cee98b0",
   "optimized": {
-    "@angular/common/http": {
-      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
-      "file": "@angular_common_http.js",
-      "fileHash": "31315b7a",
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "f8e994c5",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "c1450bbc",
+      "fileHash": "5c2a2cd6",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "5a23a7df",
+      "fileHash": "7492c2d4",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "b9baf9ac",
+      "fileHash": "6c85792f",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "4852a419",
+      "fileHash": "f775b951",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-OG5TLYZJ": {
-      "file": "chunk-OG5TLYZJ.js"
+    "chunk-YHYTR6LY": {
+      "file": "chunk-YHYTR6LY.js"
     },
-    "chunk-PYMZNBCN": {
-      "file": "chunk-PYMZNBCN.js"
-    },
-    "chunk-RTARJ4QS": {
-      "file": "chunk-RTARJ4QS.js"
+    "chunk-HJSLYVXA": {
+      "file": "chunk-HJSLYVXA.js"
     },
     "chunk-Z3GLR2YK": {
       "file": "chunk-Z3GLR2YK.js"

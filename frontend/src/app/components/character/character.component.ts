@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
-
+import { Component} from '@angular/core';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-character',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './character.component.html',
   styleUrl: './character.component.css'
 })
 export class CharacterComponent {
-
+  
+  activeTab: string = 'Race Info' // Default active tab
+  
+  OpenCharInfoTab(tabPage: string): void { 
+    this.activeTab = tabPage; 
+  }
+  
   //onFileSelected will preview the image
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;

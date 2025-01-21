@@ -4,9 +4,12 @@ import {
   isPlatformServer,
   parseCookieValue
 } from "./chunk-RTARJ4QS.js";
+  parseCookieValue,
+  setRootDomAdapter
+
 import {
   APP_BOOTSTRAP_LISTENER,
-  ApplicationRef,
+  ApplicationRef,  
   Console,
   EnvironmentInjector,
   Inject,
@@ -2451,4 +2454,8 @@ export {
    * License: MIT
    *)
 */
+<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps/chunk-PYMZNBCN.js
 //# sourceMappingURL=chunk-PYMZNBCN.js.map
+========
+//# sourceMappingURL=chunk-YHYTR6LY.js.map
+>>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps/chunk-YHYTR6LY.js
