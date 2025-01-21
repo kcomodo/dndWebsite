@@ -38,7 +38,7 @@ const corsOptions = {
 const app = express();
 
 // Middleware to parse JSON request bodies
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Use user routes for any endpoint starting with '/api'
 app.use(cors());
@@ -47,9 +47,10 @@ app.use(cors());
 app.options('*', cors(corsOptions));
 
 app.get("/login", cors(corsOptions), async function(req, res){
-    const clientEmail = req.query.clientEmail;
+    console.log(req.body);
+    const clientEmail = req.body.clientEmail;
     const clientPW = req.query.clientPW;
-    console.log(clientEmail, +", "+clientPW)
+    console.log(clientEmail+", "+clientPW);
 })
 
 // Create and run the HTTP server
