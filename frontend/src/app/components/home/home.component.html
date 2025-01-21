@@ -1,20 +1,17 @@
 <!-- This website collects anonymous data about how users interact with our website. This data provides us with valuable insights that help us to improve our products. Some of these analytics features are non-essential and use browser cookies.
 What data we collect and information on how it is used is described in our -->
 <!--Cookies popup at some point-->
-
 <!--Use Body for background-->
-<body class="body-bg">
-    
-    <header class="headerContent">
-        <!--Logo contains dragon ico-->
-        <img src="/site-logo.png">
-        <span> D&D Website </span>
-        <label for="signup-button">
-            <input type="submit" class="input-labels-reuseable" value="Sign Up!" required>
-        </label>
-        <label for="login-button">
-            <input type="submit" class="input-labels-reuseable" value="Login" required>
-        </label>
-    </header>
-</body>
+<!-- Encapsulate header content inside a valid container -->
 
+<div class="page-container">
+  <header class="headerContent">
+    <!-- Logo -->
+    <img src="/site-logo.png" alt="Site Logo">
+    <span>D&D Website</span>
+    <!-- Signup Button -->
+    <button class="input-labels-reuseable" id="signup-button">Sign Up!</button>
+    <!-- Login Button -->
+    <button class="input-labels-reuseable" id="login-button">Login</button>
+  </header>
+</div>
