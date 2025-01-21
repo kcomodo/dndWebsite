@@ -6,7 +6,7 @@ import {
   EVENT_MANAGER_PLUGINS,
   EventManagerPlugin,
   HTTP_ROOT_INTERCEPTOR_FNS
-} from "./chunk-YAROXXR3.js";
+} from "./chunk-6FWMCUKM.js";
 import {
   DOCUMENT,
   NullViewportScroller,
@@ -16,7 +16,7 @@ import {
   XhrFactory,
   getDOM,
   setRootDomAdapter
-} from "./chunk-QWJBPVFH.js";
+} from "./chunk-2M2HMFBT.js";
 import {
   ALLOW_MULTIPLE_PLATFORMS,
   ANIMATION_MODULE_TYPE,
@@ -21551,4 +21551,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-TQRRXB35.js.map
+//# sourceMappingURL=chunk-IXHACM22.js.map
