@@ -20,14 +20,6 @@ con.connect(function (err) {
     else {console.log("Connected!")};
 });
 
-function test() {
-    con.query('SELECT * FROM userInfo', function (err, result) {
-        if (err) { console.log(err)
-        } else {console.log(result)}});
-}
-
-test()
-
 const corsOptions = {
     origin: "https:localhost:4200",
     optionsSucessStatus: 204,
@@ -46,11 +38,48 @@ app.use(cors());
 //using this to handle preflight requests so that they also intake the corsOptions
 app.options('*', cors(corsOptions));
 
+function authorizeToken(clientEmail) {
+    con.query(`SELECT authCode, authExpire FROM userInfo WHERE userEmail = ${clientEmail}`, function (err, result) {
+        if (err) {console.log(err);}
+        else {
+            const curDate = new Date();
+
+            if (curDate > result[0].authExpire) {
+                return obtainToken();
+            }
+        }
+
+    return result[0].authCode;
+});
+}
+
+function obtainToken() {
+
+}
+
 app.post("/login", cors(corsOptions), async function(req, res){
     console.log(req.body);
     const clientEmail = req.body.clientEmail;
     const clientPW = req.body.clientPW;
     console.log(clientEmail+", "+clientPW);
+
+    con.query(`SELECT * FROM userInfo WHERE clientEmail = ${clientEmail}`, function (err, result) {
+        if (err) {res.send("Email is invalid")}
+
+        if (result[0].userPassword != clientPW) {
+            res.send("Password is invalid");
+        } 
+
+        const token = authorizeToken(clientEmail);
+
+        if (token != false) {
+            const userData = {
+                userName: result[0].username,
+                authCode: result[0].authCode
+            };
+            res.send(userData)
+        }
+    });
 })
 
 // Create and run the HTTP server
