@@ -4,6 +4,8 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CharacterComponent } from './components/character/character.component';
+
+
 export const routes: Routes = [
   {
     path: 'landingpage',

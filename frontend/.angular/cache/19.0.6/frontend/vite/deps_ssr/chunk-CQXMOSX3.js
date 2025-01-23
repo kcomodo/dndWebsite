@@ -1,17 +1,19 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Router,
-  loadChildren,
+  loadChildren
+} from "./chunk-7TTVXZSZ.js";
+import {
   INITIAL_CONFIG,
   SERVER_CONTEXT,
   platformServer,
   renderApplication,
-  renderModule,
-  Router,
-  loadChildren,
+  renderModule
+} from "./chunk-SLIZ5KYQ.js";
+import {
   APP_BASE_HREF,
   PlatformLocation
-} from "./chunk-SLIZ5KYQ.js";
+} from "./chunk-2M2HMFBT.js";
 import {
   APP_INITIALIZER,
   ApplicationRef,
@@ -11287,8 +11289,4 @@ export {
   AngularAppEngine,
   createRequestHandler
 };
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-CQXMOSX3.js
 //# sourceMappingURL=chunk-CQXMOSX3.js.map
-========
-//# sourceMappingURL=chunk-6USQ22AV.js.map
->>>>>>>> f35b31a85dd38f533f4b377c79804da038f4e081:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-6USQ22AV.js
