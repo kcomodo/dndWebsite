@@ -9,16 +9,16 @@
       <header>Welcome Back Adventuer</header>
     </div>
     <!--Username / Password and sign in Form fill in form action later -->
-    <form action="" method="post">
+    <form action="login-form" method="post" (ngSubmit)="onLogin()">
 
       <!-- Username Input -->
-      <label for="Username">
-        <input type="text" class="input-labels-reuseable" placeholder="Username or Email" required>
+      <label for="email">
+        <input type="text" class="input-labels-reuseable" [(ngModel)]="clientEmail" name="clientEmail" placeholder="Email" required>
       </label>
 
       <!-- Password Input -->
       <label for="Password">
-        <input type="password" class="input-labels-reuseable" placeholder="Password" required>
+        <input type="password" class="input-labels-reuseable" [(ngModel)]="clientPW" name="clientPW" placeholder="Password" required>
       </label>
 
       <!--Forgot Password & Remeber Me Container-->
@@ -36,4 +36,5 @@
     </div>
   </div>
 
-  </div>
+
+</div>

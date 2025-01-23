@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { HttpClient} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { Router } from "@angular/router";
+import { CustomerService } from '../../services/customer.service';
 @Component({
   selector: 'app-login',
-  standalone: true, // Marking it as standalone
-  imports: [HttpClientModule], // Importing HttpClientModule
+  imports: [FormsModule], //Import formsModule for Ng
   templateUrl: './login.component.html', // Correctly referring to the HTML file
   styleUrls: ['./login.component.css'], // Correctly pluralized
 })
 export class LoginComponent {
-  private baseUrl = 'http://localhost:1337'; // Base URL for the backend
-  private loginUrl = 'http://localhost:1337/login';
-  constructor(private http: HttpClient) { // Injecting HttpClient
+  clientEmail: string = "";
+  clientPW: string = "";
+  constructor(private router: Router, private customerService : CustomerService) { 
     console.log("Testing LoginComponent");
-    let clientEmail = "testing71@gmail.com";
-    let clientPW = "testing1234";
+  }
+  onLogin(): void {
+    console.log("email and password: ", this.clientEmail, this.clientPW);
 
-    // Call the validateLogin method
-    this.validateLogin(clientEmail, clientPW).subscribe({
+    // Call the validateLogin method in customerService
+    this.customerService.validateLogin(this.clientEmail, this.clientPW).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
       },
@@ -28,9 +30,5 @@ export class LoginComponent {
     });
   }
 
-  validateLogin(clientEmail: string, clientPW: string): Observable<any> {
-    const body = { clientEmail, clientPW };
-    return this.http.post(`${this.baseUrl}/login`, body);
-  }
 
 }
