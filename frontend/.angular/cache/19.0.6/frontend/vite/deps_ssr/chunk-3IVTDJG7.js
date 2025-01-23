@@ -3,14 +3,8 @@ import {
   DOCUMENT,
   XhrFactory,
   isPlatformServer,
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-4HSFWJKE.js
   parseCookieValue
-} from "./chunk-QWJBPVFH.js";
-========
-  parseCookieValue,
-  setRootDomAdapter
 } from "./chunk-2M2HMFBT.js";
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-6FWMCUKM.js
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -2456,8 +2450,4 @@ export {
    * License: MIT
    *)
 */
-<<<<<<<< HEAD:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-4HSFWJKE.js
-//# sourceMappingURL=chunk-4HSFWJKE.js.map
-========
-//# sourceMappingURL=chunk-6FWMCUKM.js.map
->>>>>>>> 7fddea09740f4a8d0abc6a767644ade34b83036b:frontend/.angular/cache/19.0.6/frontend/vite/deps_ssr/chunk-6FWMCUKM.js
+//# sourceMappingURL=chunk-3IVTDJG7.js.map
