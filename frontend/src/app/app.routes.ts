@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '../app/components/home/home.component';
+import { LandingPageComponent } from '../app/components/landingpage/landingpage.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CharacterComponent } from './components/character/character.component';
 export const routes: Routes = [
   {
-    path: 'home',
-    component:HomeComponent
+    path: 'landingpage',
+    component:LandingPageComponent
   },
   {
     path: 'login',
@@ -27,7 +27,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'landingpage',
     pathMatch: 'full'
   }
 ];
