@@ -8,11 +8,23 @@ What data we collect and information on how it is used is described in our -->
   <header class="headerContent">
     <span>D&D Website</span>
   </header>
-  <!--
-  <c-carousel [intervel]="0">
+  <div class="carouselContainer">
+    <c-carousel [interval]="0">
+      <c-carousel-inner>
+        <c-carousel-item *ngFor="let slide of slides">
+          <img [src]="slide.src"
+               alt="{{slide.title}}"
+               class="d-block w-100"
+               loading="lazy" />
+        </c-carousel-item>
+      </c-carousel-inner>
+      <c-carousel-control [routerLink] caption="Previous" id="carouselButton" direction="prev"></c-carousel-control>
+      <c-carousel-control [routerLink] caption="Next" id="carouselButton" direction="next"></c-carousel-control>
+    </c-carousel>
+  </div>
 
-  </c-carousel>
-    -->
+
+
 </div>
 <div class="page-container-middle">
   <header class="headerContent">
