@@ -1,13 +1,14 @@
-'use strict';
 
 const http = require('http');
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv').config();
 const mysql = require('mysql2');
+const crypto = require('crypto');
+const { getMaxListeners } = require('events');
 const port = process.env.PORT || 1337;
 
+console.log(process.env.HOST);
 const con = mysql.createConnection({
     host: process.env.HOST,
     user: process.env.ROOT_USER,
@@ -38,23 +39,54 @@ app.use(cors());
 //using this to handle preflight requests so that they also intake the corsOptions
 app.options('*', cors(corsOptions));
 
-function authorizeToken(clientEmail) {
-    con.query(`SELECT authCode, authExpire FROM userInfo WHERE userEmail = ${clientEmail}`, function (err, result) {
-        if (err) {console.log(err);}
+async function obtainToken(clientEmail) {
+    const token = crypto.randomBytes(16).toString('hex');
+    con.query(`UPDATE userInfo SET authCode = '${token}' WHERE userEmail = '${clientEmail}'`, async function(err, result) {
+        if (err) {console.log(err); return false}
+        else {console.log(result); return token}
+    });
+}
+
+async function authorizeToken(clientEmail) {
+    con.query(`SELECT authCode, authExpire FROM userInfo WHERE userEmail = '${clientEmail}'`, async function (err, result) {
+        if (err) {console.log(err); return false;}
         else {
             const curDate = new Date();
 
             if (curDate > result[0].authExpire) {
-                return obtainToken();
+                console.log("outdated");
+                return await obtainToken(clientEmail);
             }
         }
 
+    console.log("not expired");
     return result[0].authCode;
 });
 }
 
-function obtainToken() {
+function validatePW(clientPW, passwordSalt, userPW) {
+    console.log(clientPW+", "+passwordSalt);
+    var hash = crypto.createHash('sha256');
+    hash.update(clientPW);
+    var pwHash = hash.digest('hex');
+    hash = crypto.createHash('sha256');
+    hash.update(clientPW+passwordSalt+clientPW);
+    pwHash = hash.digest('hex');
+    console.log(pwHash);
+    console.log(userPW);
+    if (pwHash == userPW) {
+        return true;
+    }
+    return false;
+}
 
+function test() {
+    con.query(`SELECT * FROM userInfo WHERE user_id = 1`, function (err, result) {
+        if (err) {console.log(err)}
+        else {
+            console.log(result[0].userPassword.toString());
+        }
+        });
 }
 
 app.post("/login", cors(corsOptions), async function(req, res){
@@ -63,22 +95,23 @@ app.post("/login", cors(corsOptions), async function(req, res){
     const clientPW = req.body.clientPW;
     console.log(clientEmail+", "+clientPW);
 
-    con.query(`SELECT * FROM userInfo WHERE clientEmail = ${clientEmail}`, function (err, result) {
+    con.query(`SELECT * FROM userInfo WHERE userEmail = '${clientEmail}'`, async function (err, result) {
         if (err) {res.send("Email is invalid")}
 
-        if (result[0].userPassword != clientPW) {
+        if (!validatePW(clientPW, result[0].passwordSalt, result[0].userPassword.toString())) {
             res.send("Password is invalid");
-        } 
+        }   
 
-        const token = authorizeToken(clientEmail);
+        const token = await authorizeToken(clientEmail);
 
         if (token != false) {
+            console.log("e")
             const userData = {
                 userName: result[0].username,
-                authCode: result[0].authCode
+                authCode: token
             };
             res.send(userData)
-        }
+        };
     });
 })
 
