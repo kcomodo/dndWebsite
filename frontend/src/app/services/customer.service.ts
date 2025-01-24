@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +14,14 @@ export class CustomerService {
 
     const body = { clientEmail, clientPW };
     return this.http.post(`${this.baseUrl}/login`, body);
+
+  }
+  createUserAccount(clientUsername: string, clientEmail: string, clientPW: string) //Observable<any>
+  {
+    const body = { clientUsername, clientEmail, clientPW };
+  }
+  updateUserAccount(clientUsername: string, clientEmail: string, clientPW: string) //Observable<any>
+  {
 
   }
 }

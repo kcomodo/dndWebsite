@@ -1,34 +1,112 @@
-/* The following style is a reusable border */
-.user-input-container-reuseable {
-  position: relative;
-  margin: 0 auto;
-  top: 20vh;
-  width: 20vw;
-  align-items: center;
-  background-color: #c374ff28;
-  backdrop-filter: blur(20px);
-  border-color: #F0C2F6;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 20px;
+
+.navBar {
+  background-image: url(/HomePage_Top.png);
+  height: 0vh;
 }
-/* The following style changes <input type> to a single standard */
-.input-labels-reuseable {
-  position: relative;
-  margin: 5% 0% 0% 15%;
-  border-style: none;
-  border-radius: 20px;
-  padding: 5%;
-  font-family: Inter;
-  font-size: 1.1em;
-  color: #554760;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.226);
+.navRight {
+  float: right;
 }
 
-.header-generic {
+.buttonsLeft {
+  margin: 10px;
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: .375em;
+  box-shadow:none;
+  box-sizing: border-box;
+  color: #363636;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Metal Mania';
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 1.5;
+  padding: calc(.5em - 1px) 1em;
   position: relative;
-  color: #DBAEFF;
-  padding-top: 10%;
-  font-size: 1.5rem;
   text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  width:7em;
 }
+
+.buttonsLeft:active {
+    border-color: #4a4a4a;
+    outline: 0;
+  }
+
+.buttonsLeft:focus {
+    border-color: #485fc7;
+    outline: 0;
+  }
+
+.buttonsLeft:hover {
+    border-color: #b5b5b5;
+  }
+
+.buttonsLeft:focus:not(:active) {
+    box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+  }
+
+
+
+.buttonsRight {
+  margin: 10px;
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: .375em;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #363636;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Metal Mania';
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 1.5;
+  padding: calc(.5em - 1px) 1em;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 7em;
+}
+
+  .buttonsRight:active {
+    border-color: #4a4a4a;
+    outline: 0;
+  }
+
+  .buttonsRight:focus {
+    border-color: #485fc7;
+    outline: 0;
+  }
+
+  .buttonsRight:hover {
+    border-color: #b5b5b5;
+  }
+
+  .buttonsRight:focus:not(:active) {
+    box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+  }
+
+
+
+
+#logo{
+    margin:10px;
+    width:40px;
+    height:40px;
+}
+
