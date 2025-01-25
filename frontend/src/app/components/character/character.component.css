@@ -1,9 +1,53 @@
+/* a box that the user can choose from a infinitely scaling grid of things related to the thing*/
+/* Note to Self: Change Overflow Auto Scroll Bar design */
+/* Other Other Note to Self: Maybe move Selection Screen elements to global css *ADD A SEARCH BAR* */
+.selectionScreen {
+  display: grid;
+  grid-template-rows: auto 1fr; 
+  max-height: 700px;
+  width: 75%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: #a52a2a;
+  
+}
+.closeMenu {
+  grid-row: 1;
+  
+  text-align: center;
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+.selectionScrollable {
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  grid-row: 2;
+  overflow: auto;
+  padding: 10px;
+  max-height: 100%;
+}
+#pretendSelction {
+  grid-column: 1 / -1; /* ; Span the entire width of the grid */
+  width: 100%; /* Take the full width of the grid column */
+  height: 200px;
+  background-color: rgb(212, 253, 253);
+  margin: 5%; /* Add spacing around boxes */
+}
 
+
+.selectionScreen > div:not(.closeMenu) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive box layout */
+  gap: 10px; /* Space between boxes */
+}
+/* ================================== */
 .container {
- /* background-color: grey;*/
-  margin: 2vh;
+  margin-top: 5%;
   background-color:#FAF5EF;
-  font-family: Metal Mania;
 }
 
 .characterSheet {
@@ -11,49 +55,6 @@
   align-items: center;
   display: flex;
 }
-
-/*Section for Drop Down Menu Class */
-.dropbtn {
-  font-family: 'Metal Mania';
-  color: #a52a2a;
-  padding: 16px;
-  font-size: 32px;
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* Change this later */
-.dropdown:hover .dropbtn {background-color: #ffffff;}
 
 /* Other Css */
 .characterStats {
@@ -65,6 +66,10 @@
   margin: 10px;
   padding: 32px;
   font-family: Inter;
+}
+
+.characterStats:hover{
+  background-color: aqua;
 }
 
 #nameTitle {
