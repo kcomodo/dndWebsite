@@ -1,17 +1,6 @@
-<div class="backgroundImage">
-  <p>background image up here + links</p>
-</div>
-
-<!-- Section for interactable tabs -->
-<div class="tabs">
-  <button (click)="OpenCharInfoTab('Race Info')">Race Info</button>
-  <button (click)="OpenCharInfoTab('Stats')"> Stats</button>
-  <button (click)="OpenCharInfoTab('Lore')"> Character Lore</button>
-</div>
-<!-- Section for tab content-->
-<div id="Race Info"class="tabContent" *ngIf="activeTab == 'Race Info'">
-
-  <!-- Character Image -->
+<!-- Character Image Container -->
+<div class="infoBox">
+  <!-- Image Container -->
   <div class="container">
     <p id="nameTitle">Name of your character</p>
     <div class="characterSheet">
@@ -23,70 +12,96 @@
     </div>
   </div>
   
-  <!-- Charater Info That Isn't Stat Related -->
-  <div class="infoBox">
-    <div class="info">
-      
-      <div class="characterStats">
-        <!-- Drop Down for Classes -->
-        <div class="dropdown">
-          <button class="dropbtn">Classes</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
+
+  <!-- Race/Background/etc Content Selection Container(s)  -->
+  <div id="Class Info" class="tabContent">
+    <div *ngIf='menuVisibility.getClasses' class="selectionScreen">
+      <header class="closeMenu" (click)="toggleSelectionScreen('getClasses')">close</header>
+      <!-- Scrollable Content -->
+      <div class="selectionScrollable" #scrollableContent>
+        <div id="pretendSelction">Class 1</div> <!--TEST BOX(s): Remove this box later-->
+        <div id="pretendSelction">Class 2</div>
+        <div id="pretendSelction">Class 3</div>
+        <div id="pretendSelction">Class 4</div>
+        <div id="pretendSelction">Class 5</div>
+        <div id="pretendSelction">Class 6</div>
+        <div id="pretendSelction">Class 7</div>
+        <div id="pretendSelction">Class 8</div>
       </div>
-      
-      <div class="characterStats">
-        <p>Background</p>
-      
+    </div>
+  </div>
+    
+  <div id="Race Info" class="tabContent">
+    <div *ngIf='menuVisibility.getRaces' class="selectionScreen">
+      <header class="closeMenu" (click)="toggleSelectionScreen('getRaces')">close</header>
+      <!-- Scrollable Content -->
+      <div class="selectionScrollable" #scrollableContent>
+        <div id="pretendSelction">Race 1</div> <!--TEST BOX(s): Remove this box later-->
+        <div id="pretendSelction">Race 2</div>
+        <div id="pretendSelction">Race 3</div>
+        <div id="pretendSelction">Race 4</div>
+        <div id="pretendSelction">Race 5</div>
+        <div id="pretendSelction">Race 6</div>
+        <div id="pretendSelction">Race 7</div>
+        <div id="pretendSelction">Race 8</div>
       </div>
-      <!-- Drop Down for Races -->
-      <div class="characterStats">
-        <div class="dropdown">
-          <button class="dropbtn">RACES</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
+    </div>
+  </div>
+  
+  <div id="Background" class="tabContent">
+    <div *ngIf='menuVisibility.getBackground' class="selectionScreen">
+      <header class="closeMenu" (click)="toggleSelectionScreen('getBackground')">close</header>
+      <!-- Scrollable Content -->
+      <div class="selectionScrollable" #scrollableContent>
+        <div id="pretendSelction">Background 1</div> <!--TEST BOX(s): Remove this box later-->
+        <div id="pretendSelction">Background 2</div>
+        <div id="pretendSelction">Background 3</div>
+        <div id="pretendSelction">Background 4</div>
+        <div id="pretendSelction">Background 5</div>
+        <div id="pretendSelction">Background 6</div>
+        <div id="pretendSelction">Background 7</div>
+        <div id="pretendSelction">Background 8</div>
       </div>
-      
-      <div class="characterStats">
-        <p>Alignment</p>
-      </div>
-      <div class="characterStats">
-        <p>HP</p>
-      </div>
-      <div class="characterStats">
-        <p>Armor</p>
-      </div>
-      <div class="characterStats">
-        <p>Hit Dice</p>
-      </div>
-      <div class="characterStats">
-        <p>Inspiration</p>
-      </div>
-      <div class="characterStats">
-        <p>Proficiency</p>
-      </div>
-      <div class="characterStats">
-        <p>Initiative</p>
-      </div>
-      <div class="characterStats">
-        <p>Speed</p>
-      </div>
+    </div>
+  </div>
+  
+  <!-- Information Viewer Container(s) -->
+  <div class="info">
+    <button class="characterStats" (click)="toggleSelectionScreen('getClasses')">Select Class</button>
+
+    <button class="characterStats" (click)="toggleSelectionScreen('getRaces')">Select Race</button>
+    
+    <button class="characterStats" (click)="toggleSelectionScreen('getBackground')"> Select Background</button>
+    
+      <!--This Will be a Dropdown Menu -->
+    <div class="characterStats"> 
+      <p>Alignment</p>
+    </div>
+    <div class="characterStats">
+      <p>HP</p>
+    </div>
+    <div class="characterStats">
+      <p>Armor</p>
+    </div>
+    <div class="characterStats">
+      <p>Hit Dice</p>
+    </div>
+    <div class="characterStats">
+      <p>Inspiration</p>
+    </div>
+    <div class="characterStats">
+      <p>Proficiency</p>
+    </div>
+    <div class="characterStats">
+      <p>Initiative</p>
+    </div>
+    <div class="characterStats">
+      <p>Speed</p>
     </div>
   </div>
 
 </div>
 
-<div id="Stats"class="tabContent" *ngIf="activeTab == 'Stats'">Words2</div>
-
-<div id="Character Lore" class="tabContent" *ngIf="activeTab == 'Lore'">words3</div>
 
 
     
