@@ -8,7 +8,7 @@
   <button (click)="OpenCharInfoTab('Stats')"> Stats</button>
   <button (click)="OpenCharInfoTab('Lore')"> Character Lore</button>
 </div>
-<!-- Section for tab content !!!!AS A NOTE RENAME THESE TABS TO SOMETHING BETTER!!!!-->
+<!-- Section for tab content-->
 <div id="Race Info"class="tabContent" *ngIf="activeTab == 'Race Info'">
 
   <!-- Character Image -->
@@ -26,15 +26,35 @@
   <!-- Charater Info That Isn't Stat Related -->
   <div class="infoBox">
     <div class="info">
+      
       <div class="characterStats">
-        <p>Class</p>
+        <!-- Drop Down for Classes -->
+        <div class="dropdown">
+          <button class="dropbtn">Classes</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       </div>
+      
       <div class="characterStats">
         <p>Background</p>
+      
       </div>
+      <!-- Drop Down for Races -->
       <div class="characterStats">
-        <p>Race</p>
+        <div class="dropdown">
+          <button class="dropbtn">RACES</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       </div>
+      
       <div class="characterStats">
         <p>Alignment</p>
       </div>

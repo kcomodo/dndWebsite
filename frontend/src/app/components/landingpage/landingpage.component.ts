@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarouselComponent, CarouselInnerComponent, CarouselItemComponent, ThemeDirective, CarouselControlComponent, } from '@coreui/angular';
+import { CarouselComponent, CarouselInnerComponent, CarouselItemComponent, ThemeDirective, CarouselControlComponent} from '@coreui/angular';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
 @Component({
