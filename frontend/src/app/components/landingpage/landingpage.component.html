@@ -10,32 +10,73 @@ What data we collect and information on how it is used is described in our -->
   </header>
 
   <div class="carouselContainer">
-    <c-carousel [interval]="0">
-      <c-carousel-inner>
-        <c-carousel-item *ngFor="let slide of slides" class="carouselItem">
+    <div class="carouselContainer2">
 
-          <img [src]="slide.src"
-               alt="{{slide.title}}"
-               class="d-block w-100"
-               loading="lazy" />
 
-        </c-carousel-item>
-        <c-carousel-control [routerLink] caption="Previous" id="carouselButton" direction="prev"></c-carousel-control>
-        <c-carousel-control [routerLink] caption="Next" id="carouselButton" direction="next"></c-carousel-control>
-      </c-carousel-inner>
+      <c-carousel [interval]="0">
+        <c-carousel-inner>
+          <c-carousel-item *ngFor="let slide of slides" class="carouselItem">
 
-    </c-carousel>
+            <img [src]="slide.src"
+                 alt="{{slide.title}}"
+                 class="d-block w-100"
+                 loading="lazy" />
+
+          </c-carousel-item>
+          <c-carousel-control [routerLink] caption="Previous" id="carouselButton" direction="prev"></c-carousel-control>
+          <c-carousel-control [routerLink] caption="Next" id="carouselButton" direction="next"></c-carousel-control>
+        </c-carousel-inner>
+
+      </c-carousel>
+    </div>
+
+  </div>
+  <div class="descriptionTop">
+    <p id="mainText">EASY TO USE VTT</p>
+    <p id="subText">
+      Description stuff Description stuff Description stuff
+      escription stuff Description stuff Description stuff
+    </p>
   </div>
 
 
 
 </div>
-<div class="page-container-middle">
-  <header class="headerContent">
-  </header>
-</div>
-<div class="page-container-bottom">
-  <header class="headerContent">
 
-  </header>
+<div class="page-container-middle">
+  <div class="descriptions">
+    <div class="descriptionSubText1">
+      <p id="descriptionTexts">Feature #1</p>
+      <p id="smallText">Description</p>
+    </div>
+    <div class="descriptionSubText2">
+      <p id="descriptionTexts">Feature #2</p>
+      <p id="smallText">Description2</p>
+    </div>
+    <div class="descriptionSubText3">
+      <p id="descriptionTexts">Feature #3</p>
+      <p id="smallText">Description3</p>
+    </div>
+
+  </div>
+  <div class="descriptions2">
+    <div class="descriptionSubText4">
+      <p id="descriptionTexts">Feature #4</p>
+      <p id="smallText">Description4</p>
+    </div>
+    <div class="descriptionSubText5">
+      <p id="descriptionTexts">Feature #5</p>
+      <p id="smallText">Description5</p>
+    </div>
+    </div>
+
+  </div>
+
+
+<div class="page-container-bottom">
+  <div class="bottomPageItems">
+    <p id="bottomText">Your adventure begins here</p>
+    <a id="bottomButton" href="login">Sign up for free</a>
+  </div>
+
 </div>
