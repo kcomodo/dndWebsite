@@ -35,13 +35,18 @@ input[type=submit]:focus {
   box-shadow: 0px 0px;
   box-shadow: inset 0px 0px 5px #add0ff;
 }
+
 c-carousel-item img {
   width: 10%;
   height: 10%; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure image fills its container */
   display: block;
+  overflow:hidden;
+
+
 }
 #carouselButton {
+
   font-family: 'Metal Mania';
   color: white;
   margin:13px;
@@ -49,21 +54,40 @@ c-carousel-item img {
   padding:0px;
   font-size:25px;
 }
+
 .carouselContainer{
     position:relative;
     left:43%;
     top:13%;
 }
+
 c-carousel-control {
-
+  position: absolute;
+  top: 120%;
+  transform: translateY(-50%);
   width: auto;
-  height: auto;
-  background-color: rgb(0,0,0,0.5); 
-  color: #fff;
-  font-size: 18px;
-
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px;
+  text-decoration: none;
   z-index: 10;
 }
+
+
+
+#carouselButton[direction="prev"] {
+  left: -7%;
+  top: 10vh;
+}
+
+#carouselButton[direction="next"] {
+  top:10vh;
+  right: 85%;
+}
+c-carousel-item {
+  position: absolute;
+  width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+
