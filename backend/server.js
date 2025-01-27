@@ -5,7 +5,6 @@ const cors = require('cors');
 require('dotenv').config();
 const mysql = require('mysql2');
 const crypto = require('crypto');
-const { getMaxListeners } = require('events');
 const port = process.env.PORT || 1337;
 
 console.log(process.env.HOST);
@@ -39,41 +38,53 @@ app.use(cors());
 //using this to handle preflight requests so that they also intake the corsOptions
 app.options('*', cors(corsOptions));
 
-async function obtainToken(clientEmail) {
-    const token = crypto.randomBytes(16).toString('hex');
-    con.query(`UPDATE userInfo SET authCode = '${token}' WHERE userEmail = '${clientEmail}'`, async function(err, result) {
-        if (err) {console.log(err); return false}
-        else {console.log(result); return token}
+function executeQuery(query, params) {
+    return new Promise((resolve, reject) => {
+        con.execute(query, params, (err, result, fields) => {
+            if (err) reject(err);
+            else resolve(result)
+        });
     });
 }
 
+async function updateExpireDate(clientEmail) {
+    const newDate = new Date(new Date().setDate(new Date().getDate() + 7));
+    const query = "UPDATE userInfo SET authExpire = ? WHERE userEmail = ?";
+    const params = [newDate, clientEmail];
+    await executeQuery(query, params);
+}
+
+async function obtainToken(clientEmail) {
+    const token = crypto.randomBytes(16).toString('hex');
+    const query = "UPDATE userInfo SET authCode = ? WHERE userEmail = ?";
+    const params = [token, clientEmail];
+    await executeQuery(query, params);
+    await updateExpireDate(clientEmail);
+    return token;
+}
+
 async function authorizeToken(clientEmail) {
-    con.query(`SELECT authCode, authExpire FROM userInfo WHERE userEmail = '${clientEmail}'`, async function (err, result) {
-        if (err) {console.log(err); return false;}
-        else {
-            const curDate = new Date();
+    const query = "SELECT authCode, authExpire FROM userInfo WHERE userEmail = ?";
+    const params = [clientEmail];
+    const result = await executeQuery(query, params);
 
-            if (curDate > result[0].authExpire) {
-                console.log("outdated");
-                return await obtainToken(clientEmail);
-            }
+    const curDate = new Date();
+
+    if (curDate > result[0].authExpire) {
+        return await obtainToken(clientEmail);
+    } else {
+        console.log("not expired");
+        return result[0].authCode;
         }
-
-    console.log("not expired");
-    return result[0].authCode;
-});
 }
 
 function validatePW(clientPW, passwordSalt, userPW) {
-    console.log(clientPW+", "+passwordSalt);
     var hash = crypto.createHash('sha256');
     hash.update(clientPW);
     var pwHash = hash.digest('hex');
     hash = crypto.createHash('sha256');
     hash.update(clientPW+passwordSalt+clientPW);
     pwHash = hash.digest('hex');
-    console.log(pwHash);
-    console.log(userPW);
     if (pwHash == userPW) {
         return true;
     }
@@ -89,7 +100,7 @@ function test() {
         });
 }
 
-app.post("/login", cors(corsOptions), async function(req, res){
+app.post("/login", cors(corsOptions), function(req, res){
     console.log(req.body);
     const clientEmail = req.body.clientEmail;
     const clientPW = req.body.clientPW;
@@ -103,9 +114,9 @@ app.post("/login", cors(corsOptions), async function(req, res){
         }   
 
         const token = await authorizeToken(clientEmail);
+        console.log(token)
 
         if (token != false) {
-            console.log("e")
             const userData = {
                 userName: result[0].username,
                 authCode: token
