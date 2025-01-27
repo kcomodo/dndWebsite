@@ -134,7 +134,7 @@ app.post("/newLogin", cors(corsOptions), function(req, res) {
     con.query("INSERT INTO userInfo (username, userPassword, userEmail) VALUES (?, ?, ?)", [clientUsername, clientPW, clientEmail], async function (err, result) {
         if (err) {console.log(err); if (err.errno === 1062) {res.send("Email already in use")}}
         else {
-            return true;
+            res.send(true);
         }
     })
 })
