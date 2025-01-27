@@ -104,9 +104,8 @@ app.post("/login", cors(corsOptions), function(req, res){
     console.log(req.body);
     const clientEmail = req.body.clientEmail;
     const clientPW = req.body.clientPW;
-    console.log(clientEmail+", "+clientPW);
 
-    con.query(`SELECT * FROM userInfo WHERE userEmail = '${clientEmail}'`, async function (err, result) {
+    con.execute("SELECT * FROM userInfo WHERE userEmail = ?", [clientEmail], async function (err, result) {
         if (err) {res.send("Email is invalid")}
 
         if (!validatePW(clientPW, result[0].passwordSalt, result[0].userPassword.toString())) {
@@ -126,6 +125,19 @@ app.post("/login", cors(corsOptions), function(req, res){
     });
 })
 
+app.post("/newLogin", cors(corsOptions), function(req, res) {
+    console.log(req);
+    const clientUsername = req.body.clientUsername;
+    const clientEmail = req.body.clientEmail;
+    const clientPW = req.body.clientPW;
+
+    con.query("INSERT INTO userInfo (username, userPassword, userEmail) VALUES (?, ?, ?)", [clientUsername, clientPW, clientEmail], async function (err, result) {
+        if (err) {console.log(err); if (err.errno === 1062) {res.send("Email already in use")}}
+        else {
+            return true;
+        }
+    })
+})
 // Create and run the HTTP server
 http.createServer(app).listen(port, function () {
     console.log(`Server running on http://localhost:${port}`);
